@@ -29,12 +29,16 @@ int GetNumber(string msg)
 }
 
 int number = GetNumber("Введите пятизначное число");
-string numberst = Convert.ToString(number);
-int length = numberst.Length;
-int targetCount = length / 2;
-bool isPolindrom = false;
+
 // Не разобрался как сделать вторую функцию
-for (int i = 0; i <= targetCount;)
+
+bool GetPolindro(int number)
+{
+    string numberst = Convert.ToString(number);
+    int length = numberst.Length;
+    int targetCount = length / 2;
+    bool isPolindrom = false;
+    for (int i = 0; i <= targetCount;)
      {
         if (numberst[i] == numberst[length-1])
         {
@@ -50,13 +54,17 @@ for (int i = 0; i <= targetCount;)
         }   
          
      }
-if (isPolindrom == true)
+     return isPolindrom;
+}
+
+bool isPolindrom = GetPolindro(number);
+if (isPolindrom)
 {
-    Console.WriteLine($"{numberst} -> да");
+    Console.WriteLine($"{number} -> да");
 }
 else
 {
-    Console.WriteLine($"{numberst} -> нет");
+    Console.WriteLine($"{number} -> нет");
 }
 
 
